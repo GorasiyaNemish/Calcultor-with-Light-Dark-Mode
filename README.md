@@ -1,2 +1,2 @@
-# Calcultor-with-Light-Dark-Mode
+# Calcultor
 Calculator with Dark Mode and Light Mode
