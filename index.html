@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator" id="calculator">
+            <form action="">
+                <div class="dark">
+                    <ion-icon name="moon" onclick="darkMode()" id="icon"></ion-icon>
+                    <!-- <ion-icon name="sunny"></ion-icon> -->
+                </div>
+                <div class="display">
+                    <input type="text" name="display" id="display">
+                </div>
+                <div>
+                    <input class="orange" type="button" name="" id="" value="(" onclick="display.value += '(' ">
+                    <input class="orange" type="button" name="" id="" value=")" onclick="display.value += ')' ">
+                    <input class="orange" type="button" name="" id="" value="Del" onclick="display.value = display.value.slice(0,-1)">
+                    <input class="clear" type="button" name="" id="" value="C" onclick="display.value='' ">
+                </div>
+                <div>
+                    <input type="button" name="" id="" value="7" onclick="display.value += '7' ">
+                    <input type="button" name="" id="" value="8" onclick="display.value += '8' ">
+                    <input type="button" name="" id="" value="9" onclick="display.value += '9' ">
+                    <input class="orange" type="button" name="" id="" value="/" onclick="display.value += '/' ">
+                </div>
+                <div>
+                    <input type="button" name="" id="" value="4" onclick="display.value += '4' ">
+                    <input type="button" name="" id="" value="5" onclick="display.value += '5' ">
+                    <input type="button" name="" id="" value="6" onclick="display.value += '6' ">
+                    <input class="orange" type="button" name="" id="" value="*" onclick="display.value += '*' ">
+                </div>
+                <div>
+                    <input type="button" name="" id="" value="1" onclick="display.value += '1' ">
+                    <input type="button" name="" id="" value="2" onclick="display.value += '2' ">
+                    <input type="button" name="" id="" value="3" onclick="display.value += '3' ">
+                    <input class="orange" type="button" name="" id="" value="-" onclick="display.value += '-' ">
+                </div>
+                <div>
+                    <input type="button" name="" id="" value="." onclick="display.value += '.' ">
+                    <input type="button" name="" id="" value="0" onclick="display.value += '0' ">
+                    <input class="equal" type="button" name="" id="" value="=" onclick="calculation()">
+                    <input class="orange" type="button" name="" id="" value="+" onclick="display.value += '+' ">
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <script>
+        function calculation() {
+            let ans = eval(display.value);
+            if(Number.isInteger(ans)){
+                display.value = ans;
+            }
+            else{
+                display.value = ans.toFixed(2);
+            }
+        }
+        function darkMode(){
+            var icon = document.getElementById("icon");
+            document.body.classList.toggle("dark-theme");
+            if(document.body.classList.contains("dark-theme")){
+                icon.name = "sunny";
+            }else{
+                icon.name = "moon";
+            }
+            
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
